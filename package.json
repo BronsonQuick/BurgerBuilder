@@ -24,7 +24,10 @@
     "eject": "react-scripts eject",
     "lint:fix": "eslint src/**/*.js --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "deploy-storybook": "storybook-to-ghpages --branch='storybook'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +45,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.14",
+    "@storybook/storybook-deployer": "^2.8.2",
     "babel-eslint": "^10.0.3",
     "gh-pages": "^2.2.0",
     "prop-types": "^15.7.2"
