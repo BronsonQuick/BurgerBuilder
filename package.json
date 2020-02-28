@@ -26,7 +26,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook -s -c .storybook -o storybook",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "eslintConfig": {
