@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/BurgerBuilder/static/css/main.c942d9d4.chunk.css",
+    "main.js": "/BurgerBuilder/main.1b82bba8ee062c760dd2.bundle.js",
+    "main.css.map": "/BurgerBuilder/static/css/main.c942d9d4.chunk.css.map",
+    "main.js.map": "/BurgerBuilder/main.1b82bba8ee062c760dd2.bundle.js.map",
+    "runtime~main.js": "/BurgerBuilder/runtime~main.1b82bba8ee062c760dd2.bundle.js",
+    "runtime~main.js.map": "/BurgerBuilder/runtime~main.1b82bba8ee062c760dd2.bundle.js.map",
+    "vendors~main.js": "/BurgerBuilder/vendors~main.1b82bba8ee062c760dd2.bundle.js",
+    "vendors~main.js.map": "/BurgerBuilder/vendors~main.1b82bba8ee062c760dd2.bundle.js.map",
+    "iframe.html": "/BurgerBuilder/iframe.html",
+    "precache-manifest.4813bc5c922fa3b2e937876d56c905c5.js": "/BurgerBuilder/precache-manifest.4813bc5c922fa3b2e937876d56c905c5.js",
+    "service-worker.js": "/BurgerBuilder/service-worker.js",
+    "static/media/burger-logo.png": "/BurgerBuilder/static/media/burger-logo.b8503d26.png",
+    "vendors~main.1b82bba8ee062c760dd2.bundle.js.LICENSE.txt": "/BurgerBuilder/vendors~main.1b82bba8ee062c760dd2.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.1b82bba8ee062c760dd2.bundle.js",
+    "vendors~main.1b82bba8ee062c760dd2.bundle.js",
+    "static/css/main.c942d9d4.chunk.css",
+    "main.1b82bba8ee062c760dd2.bundle.js"
+  ]
+}
