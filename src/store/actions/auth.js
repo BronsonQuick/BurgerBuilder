@@ -30,10 +30,10 @@ export const auth = (email, password, isSignUp) => {
 			password: password,
 			returnSecureToken: true
 		}
-		let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
+		let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_API_KEY}`;
 
 		if ( !isSignUp ) {
-			url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+			url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.REACT_APP_FIREBASE_API_KEY}`;
 		}
 
 		axios.post(url,authData)
