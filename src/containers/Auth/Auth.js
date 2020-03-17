@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import styles from './Auth.module.css';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
-import { connect } from 'react-redux';
 
 class Auth extends Component {
 	state = {
@@ -25,7 +25,29 @@ class Auth extends Component {
 				},
 				value: ''
 			},
-		}
+		},
+		isSignUp: true
+	}
+	inputChangedHandler = (event, controlName) => {
+		const updatedControls = {
+			...this.state.controls,
+			[controlName]: {
+				...this.state.controls[controlName],
+				value: event.target.value
+			}
+		};
+		this.setState({controls: updatedControls});
+	}
+	submitHandler = (event) => {
+		event.preventDefault();
+		this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignUp );
+	}
+	switchAuthModeHandler = () => {
+		this.setState( prevState => {
+			return {
+				isSignUp: !prevState.isSignUp
+			}
+		});
 	}
 	render() {
 		const formElementsArray = [];
@@ -56,6 +78,11 @@ class Auth extends Component {
 					))}
 					<Button btnType="Success">Login</Button>
 				</form>
+				<Button
+					btnType="Danger"
+					clicked={this.switchAuthModeHandler}>
+					Switch to {this.state.isSignUp ? 'Sign In': 'Sign Up'}
+				</Button>
 			</div>
 		);
 		if ( this.props.loading ) {

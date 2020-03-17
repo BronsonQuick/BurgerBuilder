@@ -25,7 +25,11 @@ yarn-error.log*
 # Editor files
 .idea
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> b3a6967... Use .env for key
+=======
+
+>>>>>>> b3a6967bf0d5144a0ba4d6693bb36a8fff66eeea
 .env
