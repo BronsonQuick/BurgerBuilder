@@ -5,6 +5,7 @@ import Button from '../../components/UI/Button/Button';
 import styles from './Auth.module.css';
 import * as actions from '../../store/actions/index';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import { Redirect } from 'react-router-dom';
 
 class Auth extends Component {
 	state = {
@@ -50,6 +51,10 @@ class Auth extends Component {
 		});
 	}
 	render() {
+		let authRedirect = null;
+		if ( this.props.isAuthenticated ) {
+			authRedirect = <Redirect to="/" />;
+		}
 		const formElementsArray = [];
 		for ( let key in this.state.controls ) {
 			formElementsArray.push({
@@ -66,6 +71,7 @@ class Auth extends Component {
 		}
 		let form = (
 			<div className={styles.Auth}>
+				{authRedirect}
 				{ errorMessage }
 				<form onSubmit={this.submitHandler}>
 					{formElementsArray.map( formElement => (
@@ -99,7 +105,8 @@ class Auth extends Component {
 const mapStateToProps = state => {
 	return {
 		loading: state.auth.loading,
-		error: state.auth.error
+		error: state.auth.error,
+		isAuthenticated: state.auth.token !== null
 	}
 };
 
