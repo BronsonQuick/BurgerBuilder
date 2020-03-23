@@ -7,8 +7,16 @@ import NavigationItem from '../../Navigation/NavigationItems/NavigationItem/Navi
 configure({adapter: new Adapter()});
 
 describe('<NavigationItems />', () => {
+	let wrapper; 
+	beforeEach( () => {
+		wrapper = shallow(<NavigationItems />);
+	});
 	it('should render two navigation item elements if not authenticated', () => {
-		const wrapper = shallow(<NavigationItems />);
 		expect(wrapper.find(NavigationItem)).toHaveLength(2);
+	});
+
+	it('should render three navigation item elements if we are authenticated', () => {
+		wrapper.setProps({isAuthenticated: true})
+		expect(wrapper.find(NavigationItem)).toHaveLength(3);
 	});
 });
