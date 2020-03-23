@@ -20,7 +20,7 @@ describe('<NavigationItems />', () => {
 		expect(wrapper.find(NavigationItem)).toHaveLength(3);
 	});
 
-	it('should render three navigation item elements if we are authenticated', () => {
+	it('should render a logout link if we are authenticated', () => {
 		wrapper.setProps({isAuthenticated: true});
 		expect(wrapper.contains(<NavigationItem link="/logout">Logout</NavigationItem>)).toEqual(true);
 	});
