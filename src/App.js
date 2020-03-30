@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
 import Logout from './containers/Auth/Logout/Logout';
@@ -19,11 +19,10 @@ const asyncAuth = asyncComponent( () => {
   return import('./containers/Auth/Auth');
 });
 
-class App extends Component {
-  componentDidMount() {
-    this.props.onTryAutoSign();
-  }
-  render() {
+function App (props) {
+  useEffect(() => {
+    props.onTryAutoSign();
+  }, []);
     let routes = (
       <Switch>
         <Route path="/" exact component={BurgerBuilder} />
@@ -32,7 +31,7 @@ class App extends Component {
       </Switch>
     );
 
-    if ( this.props.isAuthenticated ) {
+    if ( props.isAuthenticated ) {
       routes = (
         <Switch>
         <Route path="/" exact component={BurgerBuilder} />
@@ -50,7 +49,6 @@ class App extends Component {
         </Layout>
       </div>
     );
-  }
 }
 
 const mapStateToProps = state => {
