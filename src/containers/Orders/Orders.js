@@ -7,10 +7,10 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as actions from '../../store/actions/index';
 
 function Orders(props) {
-	const { token, userId } = props;
+	const { token, userId, onFetchOrders } = props;
 	useEffect(() => {
-		props.onFetchOrders(props.token, props.userId);
-	}, [token, userId] );
+		onFetchOrders(token, userId);
+	}, [token, userId, onFetchOrders] );
 
 	let orders = null;
 

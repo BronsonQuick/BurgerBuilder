@@ -19,9 +19,10 @@ const Auth = React.lazy( () => {
 });
 
 function App (props) {
+  const { onTryAutoSign } = props;
   useEffect(() => {
-    props.onTryAutoSign();
-  }, [props]);
+    onTryAutoSign();
+  }, [onTryAutoSign]);
     let routes = (
       <Switch>
         <Route path="/" exact component={BurgerBuilder} />
